@@ -13,7 +13,7 @@ This repository contains the third template for HTML and CSS projects. It includ
 To get started, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/HTML_And_CSS_Template_Three.git
+git clone https://github.com/Aiham-Jassar/HTML_And_CSS_Template_Three.git
 ```
 
 Navigate to the project directory:
@@ -46,4 +46,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or suggestions, feel free to open an issue or contact me at [your-email@example.com].
+For any questions or suggestions, feel free to open an issue or contact me at [aihamjassar@gmail.com].
