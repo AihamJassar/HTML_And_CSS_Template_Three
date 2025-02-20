@@ -75,12 +75,12 @@ header .container {
 
 header .container .logo {
     height: 70px;
-    color: var(--main-color);
-    font-weight: bold;
-    font-size: 26px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 26px;
 }
 
 @media (max-width: 767px) {
@@ -179,7 +179,12 @@ header .container>ul li:last-of-type .other-links ul li {
     display: flex;
     align-items: center;
 }
-
+@media (max-width: 767px) {
+    header .container .other-links ul li {
+        width: 100% !important;
+        padding-left: 20px;
+    }
+}
 header .container>ul li:last-of-type .other-links ul li a::before {
     font-family: 'Font Awesome 5 Free';
     content: "\f007";
@@ -197,7 +202,11 @@ header .container>ul li:last-of-type .other-links ul li a {
 header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-last-of-type(2)) {
     border-bottom: 1px solid #777;
 }
-
+@media (max-width: 767px) {
+    header .container>ul li:last-of-type .other-links ul li:not(:last-of-type) {
+    border-bottom: 1px solid #777;
+}
+}
 /* End header */
 /* Start landing */
 .landing {
