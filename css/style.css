@@ -5,7 +5,6 @@
     --padding-section: 60px;
     --main-transition: 0.3s;
     --padding-section: 60px
-
 }
 
 /* End Variables */
@@ -71,6 +70,7 @@ h2.main-header {
     text-transform: uppercase;
     position: relative;
     transition: all .5s .6s;
+    z-index: 1;
 }
 
 h2.main-header:hover {
@@ -446,13 +446,16 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 .gallery {
     padding-top: var(--padding-section);
     padding-bottom: var(--padding-section);
-    background-color: var(--section-background);}
+    background-color: var(--section-background);
+}
+
 .gallery .content {
     padding-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
+
 .gallery .content .box {
     border: 10px solid white;
     --webkit-box-shadow: 0 2px 15px rgb(0 0 0 /50%);
@@ -462,6 +465,7 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     overflow: hidden;
     position: relative;
 }
+
 .gallery .container .content .box::before {
     content: "";
     width: 0;
@@ -474,29 +478,34 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     opacity: 0;
     z-index: 2;
 }
+
 .gallery .container .content .box:hover::before {
     animation: flashing 0.7s;
 }
+
 .gallery .content .box img {
     width: 100%;
 }
+
 .gallery .content .box:hover img {
-    transform: rotate(5deg) scale(1.1) ;
+    transform: rotate(5deg) scale(1.1);
 }
+
 /* End gallery section */
 /* Start features */
 .features {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
 }
+
 .features .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
     padding-top: 50px;
 }
-.features .container .box img {
-    width: 100%;
+.features .container .box  {
+    border: 1px solid #ccc
 }
 .features .container .box .image {
     position: relative;
@@ -511,33 +520,34 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     left: 0;
 }
 .features .container .box:nth-of-type(1) .image::before {
-    background-color: rgb(255 0 0 /25%);
+    background-color: rgb(244 64 54 / 60%);
 }
+
 .features .container .box:nth-of-type(2) .image::before {
-    background-color: rgb(0 255 0 /25%);
+    background-color: rgb(0 150 136 / 60%);
 }
+
 .features .container .box:nth-of-type(3) .image::before {
-    background-color: rgb(0 0 255 /25%);
+    background-color: rgb(3 169 244 / 60%);
 }
 .features .container .box .image::after {
     content: "";
-    width: 100%;
-    height: 100%;
     position: absolute;
-    top: 50%;
-    left: 0;
-    background-color: rgb(255 255 255);
-    transform-origin: center right;
-    transform: skewX(-70deg);
+    bottom: 0;
+    right: 0;
+    transition: var(--main-transition);
+    border-style: solid;
+    border-width: 0 0 170px 500px;
+    border-color: transparent transparent white transparent;
 }
-.features .container .box:hover .image::after{
-    transform: skewX(70deg);
-}
-.features .container .box:hover .info a {
-    
+.features .container .box:hover .image::after {
+    border-width: 170px 500px 170px 0;
 }
 .features .container .box {
     text-align: center;
+}
+.features .container .box img {
+    width: 100%;
 }
 .features .container .box h3 {
     width: fit-content;
@@ -546,22 +556,21 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 }
 .features .container .box h3::before {
     content: "";
-    width: 80%;
-    height: 2px;
+    width: 90%;
+    height: 5px;
     position: absolute;
     top: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
-    
 }
 .features .container .box:nth-of-type(1) .info h3::before {
-    background-color: red;
+    background-color: rgb(244 64 54);
 }
 .features .container .box:nth-of-type(2) .info h3::before {
-    background-color: green;
+    background-color: rgb(0 150 136);
 }
 .features .container .box:nth-of-type(3) .info h3::before {
-    background-color: blue;
+    background-color: rgb(3 169 244);
 }
 .features .container .box .info p {
     line-height: 1.8;
@@ -570,11 +579,25 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 .features .container .box .info a {
     display: block;
     width: fit-content;
+    border-radius: 10px;
     border: 3px solid;
     padding: 10px 20px;
     margin: 30px auto;
     font-weight: bold;
     position: relative;
+}
+.features .container .box:nth-of-type(1) .info a {
+    border-color: rgb(244 64 54);
+    color: rgb(244 64 54);
+}
+.features .container .box:nth-of-type(2) .info a {
+    border-color: rgb(0 150 136);
+    color: rgb(0 150 136);
+}
+
+.features .container .box:nth-of-type(3) .info a {
+    border-color: rgb(3 169 244);
+    color: rgb(3 169 244);
 }
 .features .container .box:hover .info a {
     color: white;
@@ -586,26 +609,75 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     position: absolute;
     top: 0;
     left: 0;
-    background-color: red;
     transition: .3s;
     z-index: -1;
+}
+.features .container .box:nth-of-type(1) .info a::before {
+    background-color: rgb(244 64 54);
+}
+
+.features .container .box:nth-of-type(2) .info a::before {
+    background-color: rgb(0 150 136);
+}
+
+.features .container .box:nth-of-type(3) .info a::before {
+    background-color: rgb(3 169 244);
 }
 .features .container .box:hover .info a::before {
     width: 100%;
 }
-.features .container .box:nth-of-type(1) .info a {
-    color: red;
-    border-color: red;
-}
-.features .container .box:nth-of-type(2) .info a {
-    color: green;
-    border-color: green;
-}
-.features .container .box:nth-of-type(3) .info a {
-    color: blue;
-    border-color: blue;
-}
+
 /* End features */
+/* Start testimonials */
+.testimonials {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--section-background);
+}
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    padding-top: 50px;
+}
+.testimonials .container .box {
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 15px 0 rgb(0 0 0 /20%) ;
+    position: relative;
+}
+.testimonials .container .box .image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid var(--section-background);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY( -50%);
+    overflow: hidden;
+}
+.testimonials .container .box .image img {
+    width: 100%;
+}
+.testimonials .container .box .info {
+    padding: 20px;
+}
+.testimonials .container .box .info h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.testimonials .container .box .info p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #777;
+}
+.testimonials .container .box .info .star-color {
+    color: gold;
+}
+
+/* End testimonials */
 /* Animations */
 @keyframes up-and-down {
 
@@ -642,10 +714,14 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
         transform: translateX(-10px);
     }
 }
+
 @keyframes flashing {
-    0%, 40% {
-       opacity: 1;
+
+    0%,
+    40% {
+        opacity: 1;
     }
+
     100% {
         width: 200%;
         height: 200%;
