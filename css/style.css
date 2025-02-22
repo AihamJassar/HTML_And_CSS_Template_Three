@@ -65,7 +65,7 @@ h2.main-header {
     margin: 50px auto;
     padding: 10px 20px;
     border: 3px solid black;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
@@ -495,7 +495,7 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 /* Start features */
 .features {
     padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
+    padding-bottom: var(--padding-section);
 }
 
 .features .container {
@@ -636,7 +636,7 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 }
 .testimonials .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
     padding-top: 50px;
 }
@@ -667,6 +667,9 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     font-size: 20px;
     font-weight: bold;
 }
+.testimonials .container .box .info p:first-of-type {
+    margin-bottom: 10px;
+}
 .testimonials .container .box .info p {
     margin: 10px 0 0;
     font-size: 18px;
@@ -678,6 +681,288 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 }
 
 /* End testimonials */
+/* Start Team Members */
+.team-members {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+.team-members .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.team-members .container .box .box-content {
+    background-color: rgb(0 0 0 /10%);
+    width: 80%;
+    margin-left: auto;
+    aspect-ratio: 1 / 1.5;
+    padding-top: 15%;
+    border-radius: 10px;
+    position: relative;
+}
+.team-members .container .box .box-content::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: rgb(0 0 0 /5%);
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: var(--main-transition);
+}
+.team-members .container .box:hover .box-content::before {
+    width: 100%;
+}
+.team-members .container .box .box-content .image{
+    position: relative;
+    right:25%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.team-members .container .box .box-content .image img {
+    max-width: 100%;
+}
+.team-members .container .box:hover .box-content .image img {
+    filter: grayscale(100%);
+}
+/* .team-members .container .box .content {
+    display: flex;
+} */
+.team-members .container .box .box-content .social {
+      display: inline-flex;
+      width: fit-content;
+      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      
+}
+.team-members .container .box .box-content .social i {
+    padding: 0 25px 40px;
+    color: rgb(0 0 0 /50%);
+    font-size: 20px;
+}
+.team-members .container .box .box-content .social i:hover {
+    color: var(--main-color);
+}
+.team-members .container .box .box-content .info {
+    padding: 10px 15px 0;
+}
+.team-members .container .box .box-content .info h2 {
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+.team-members .container .box:hover .box-content .info h2 {
+    color: #777;
+}
+.team-members .container .box .box-content .info p {
+   font-size: 20px;
+   color: #777;
+   padding-bottom: 10px;
+}
+/* End Team Members */
+/* Start services */
+.services {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--section-background);
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.services .container .box {
+    background-color: white;
+    text-align: center;
+    padding-top: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px rgb(0 0 0 /20%);
+    position: relative;
+    counter-increment: box-counter;
+    transition: var(--main-transition);
+}
+.services .container .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 2px 2px 10px rgb(0 0 0 /50%);
+}
+.services .container .box::before {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--main-transition);
+}
+.services .container .box:hover::before {
+    width: 100%;
+}
+.services .container .box::after {
+    content: "0" counter(box-counter);
+    width: 100px;
+    height: 50px;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    background-image: linear-gradient(70% var(--main-color), 70% #777);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.services .container .box i {
+    color: #dddbdb;
+}
+.services .container .box h2 {
+    color: var(--main-color);
+    font-size: 30px;
+    margin: 20px auto;
+}
+.services .container .box .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.services .container .box span {
+   display: block;
+   width: 50px;
+   height: 50px;
+   background-color: #dddbdb;
+   position: relative;
+   left: 80px;
+   transform: skewX(-35deg);
+   z-index: 2;
+}
+.services .container .box a {
+    display: block;
+    color: var(--main-color);
+    margin-right: 20px;
+
+}
+/* End services */
+/* Start skills */
+.our-skills {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+.our-skills .container {
+    display: flex;
+    align-items: center;
+}
+.our-skills .container .image {
+    width: 50%;
+}
+@media (max-width: 991px) {
+    .our-skills .container .image {
+       display: none;
+    }
+}
+.our-skills .container .image img {
+    width: 100%;
+}
+.our-skills .container .skills {
+    flex: 1;
+}
+.our-skills .container .skill .prog {
+    margin: 30px auto;
+    height: 40px;
+    background-color: #ccc;
+    border: none;
+    position: relative;
+}
+.our-skills .container .skill .prog::before {
+    content: attr(data-prog);
+    width: 35px;
+    height: 20px;
+    border: 1px solid rgb(108, 107, 107);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--main-color);
+    position: absolute;
+    right: 0;
+    top: -40px;
+}
+.our-skills .container .skill .prog span {
+    display: block;
+    background-color: var(--main-color);
+    height: 100%;
+}
+/* End skills */
+/* Start work steps */
+.work-steps {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--section-background);
+}
+.work-steps .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+@media (max-width: 991px) {
+    .work-steps .container {
+        flex-direction: column;
+    }
+}
+.work-steps .container .image img {
+    max-width: 100%;
+}
+.work-steps .container .steps .step {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(249, 244, 244);
+    border: 1px solid #dddbdb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+.work-steps .container .steps .step::before {
+    content: "";
+    width: 0;
+    height: 0;
+    background-color: rgb(0 0 0 /5%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--main-transition);
+}
+.work-steps .container .steps .step:hover:before {
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 767px) {
+    .work-steps .container .steps .step {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.work-steps .container .steps .step img {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+.work-steps .container .steps .step .info p {
+    margin: 10px auto;
+    color: #777;
+    line-height: 1.8;
+}
+/* End work steps */
 /* Animations */
 @keyframes up-and-down {
 
