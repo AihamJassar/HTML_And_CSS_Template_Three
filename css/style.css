@@ -4,7 +4,7 @@
     --section-background: #ececec;
     --padding-section: 60px;
     --main-transition: 0.3s;
-    --padding-section: 60px
+    --padding-section: 60px;
 }
 
 /* End Variables */
@@ -69,7 +69,7 @@ h2.main-header {
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
-    transition: all .5s .6s;
+    transition: all 0.5s 0.6s;
     z-index: 1;
 }
 
@@ -101,7 +101,11 @@ h2.main-header:hover::after {
 
 h2.main-header::before {
     left: -40px;
-    transition: left var(--main-transition), width var(--main-transition) var(--main-transition), height var(--main-transition) var(--main-transition), border-radius var(--main-transition) var(--main-transition), z-index .1s var(--main-transition), z-index .1s .5s;
+    transition: left var(--main-transition),
+        width var(--main-transition) var(--main-transition),
+        height var(--main-transition) var(--main-transition),
+        border-radius var(--main-transition) var(--main-transition),
+        z-index 0.1s var(--main-transition), z-index 0.1s 0.5s;
 }
 
 h2.main-header:hover::before {
@@ -110,7 +114,11 @@ h2.main-header:hover::before {
 
 h2.main-header::after {
     right: -40px;
-    transition: right var(--main-transition), width var(--main-transition) var(--main-transition), height var(--main-transition) var(--main-transition), border-radius var(--main-transition) var(--main-transition), z-index .1s var(--main-transition);
+    transition: right var(--main-transition),
+        width var(--main-transition) var(--main-transition),
+        height var(--main-transition) var(--main-transition),
+        border-radius var(--main-transition) var(--main-transition),
+        z-index 0.1s var(--main-transition);
 }
 
 h2.main-header:hover::after {
@@ -122,196 +130,203 @@ h2.main-header:hover::after {
 .spikes {
     position: relative;
 }
+
 .spikes {
     content: "";
     width: 100%;
     height: 30px;
     position: absolute;
     reight: 0;
-    background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+    background-image: linear-gradient(135deg, white 25%, transparent 25%),
+        linear-gradient(225deg, white 25%, transparent 25%);
     background-size: 30px 30px;
     z-index: 1;
 }
-/* Start header */
-header {
+
+/* Start Header */
+.header {
     background-color: white;
     position: relative;
-    --webkit-box-shadow: 0 0 10px #ddd;
-    --moz-box-shadow: 0 0 10px #ddd;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
     box-shadow: 0 0 10px #ddd;
 }
 
-header .container {
+.header .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     position: relative;
 }
 
-header .container .logo {
-    height: 70px;
+.header .logo {
+    color: var(--main-color);
+    font-size: 26px;
+    font-weight: bold;
+    height: 72px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--main-color);
-    font-weight: bold;
-    font-size: 26px;
 }
 
 @media (max-width: 767px) {
-    header .container .logo {
-        height: 50px;
+    .header .logo {
         width: 100%;
+        height: 50px;
     }
 }
 
-header .container .links {
+.header .main-nav {
     display: flex;
 }
 
 @media (max-width: 767px) {
-    header .container .links {
+    .header .main-nav {
         margin: auto;
     }
 }
 
-header .container .links>li>a {
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 30px;
-    position: relative;
-    color: black;
-}
-
-@media (max-width: 767px) {
-    header .container .links>li>a {
-        height: 50px;
-        font-size: 14px;
-        padding: 0 10px;
-    }
-}
-
-header .container>ul>li>a::before {
-    content: "";
-    width: 0;
-    height: 5px;
-    background-color: var(--main-color);
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition-duration: var(--main-transition);
-}
-
-header .container>ul>li>a:hover::before {
-    width: 100%;
-}
-
-header .container>ul>li>a:hover {
-    background-color: #edebeb;
-    font-weight: bold;
-    color: var(--main-color);
-}
-
-header .container .other-links {
-    display: none;
-    width: 100%;
-    padding: 30px;
-    display: flex;
-    position: absolute;
-    left: 0;
-    top: calc(100% + 50px);
-    background-color: white;
-    border-bottom: 5px solid var(--main-color);
-    border-top: 5px solid var(--main-color);
-    z-index: -1;
-    opacity: 0;
-    transition: top var(--main-transition), opacity var(--main-transition);
-}
-
-header .container>ul li:last-of-type:hover .other-links {
+.header .main-nav>li:hover .mega-menu {
     opacity: 1;
     z-index: 100;
     top: calc(100% + 1px);
 }
 
-header .container .other-links .image {
-    align-self: center;
+.header .main-nav>li>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: black;
+    padding: 0 30px;
+    overflow: hidden;
+    font-size: 18px;
+    transition: var(--main-transition);
 }
 
-header .container .other-links .image img {
-    width: 500px;
+@media (max-width: 767px) {
+    .header .main-nav>li>a {
+        padding: 10px;
+        font-size: 14px;
+        height: 40px;
+    }
+}
+
+.header .main-nav>li>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+
+.header .main-nav>li>a:hover {
+    color: var(--main-color);
+    background-color: #fafafa;
+}
+
+.header .main-nav>li>a:hover::before {
+    left: 0;
+}
+
+.header .mega-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 30px;
+    background-color: white;
+    border-bottom: 3px solid var(--main-color);
+    z-index: -1;
+    display: flex;
+    gap: 40px;
+    top: calc(100% + 50px);
+    opacity: 0;
+    transition: top var(--main-transition), opacity var(--main-transition);
+}
+
+@media (max-width: 767px) {
+    .header .mega-menu {
+        flex-direction: column;
+        gap: 0;
+        padding: 5px;
+    }
+}
+
+.header .mega-menu .image img {
+    max-width: 100%;
 }
 
 @media (max-width: 991px) {
-    header .container .other-links .image {
+    .header .mega-menu .image {
         display: none;
     }
 }
 
-header .container .other-links ul {
+.header .mega-menu .links {
+    min-width: 250px;
     flex: 1;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+}
 
+.header .mega-menu .links li {
+    position: relative;
+}
+
+.header .mega-menu .links li:not(:last-child) {
+    border-bottom: 1px solid #e9e6e6;
 }
 
 @media (max-width: 767px) {
-    header .container .other-links ul {
-        flex-direction: column;
+    .header .mega-menu .links:first-of-type li:last-child {
+        border-bottom: 1px solid #e9e6e6;
     }
 }
 
-header .container>ul li:last-of-type .other-links ul li {
-    width: 45%;
-    padding-left: 0;
-    display: flex;
-    align-items: center;
+.header .mega-menu .links li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fafafa;
+    z-index: -1;
+    transition: var(--main-transition);
 }
 
-@media (max-width: 767px) {
-    header .container .other-links ul li {
-        width: 100% !important;
-        padding: 15px;
-    }
+.header .mega-menu .links li:hover::before {
+    width: 100%;
 }
 
-header .container>ul li:last-of-type .other-links ul li a i {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 20px 20px 0;
-}
-
-header .container>ul li:last-of-type .other-links ul li a {
+.header .mega-menu .links li a {
     color: var(--main-color);
+    padding: 15px;
+    display: block;
+    font-size: 18px;
     font-weight: bold;
 }
 
-header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-last-of-type(2)) {
-    border-bottom: 1px solid #777;
+.header .mega-menu .links li a i {
+    margin-right: 10px;
 }
 
-@media (max-width: 767px) {
-    header .container>ul li:last-of-type .other-links ul li:not(:last-of-type) {
-        border-bottom: 1px solid #777;
-    }
-}
-
-/* End header */
-/* Start landing */
+/* End Header */
+/* Start Landing */
 .landing {
     position: relative;
 }
 
 .landing::before {
     content: "";
-    width: 100%;
-    height: 100%;
     position: absolute;
     left: 0;
     top: -40px;
+    width: 100%;
+    height: 100%;
     background-color: #ececec;
     z-index: -1;
     transform: skewY(-6deg);
@@ -319,25 +334,26 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 }
 
 .landing .container {
+    min-height: calc(100vh - 72px);
     display: flex;
     align-items: center;
-    position: relative;
-    min-height: calc(100vh - 70px);
-    padding-bottom: 7.5rem;
+    padding-bottom: 120px;
 }
 
-.landing .container .text {
+.landing .text {
     flex: 1;
 }
 
 @media (max-width: 991px) {
-    .landing .container .text {
+    .landing .text {
         text-align: center;
     }
 }
 
-.landing .container .text h1 {
+.landing .text h1 {
     font-size: 40px;
+    margin: 0;
+    letter-spacing: -2px;
 }
 
 @media (max-width: 767px) {
@@ -346,10 +362,12 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     }
 }
 
-.landing .container .text p {
+.landing .text p {
     font-size: 23px;
     line-height: 1.7;
+    margin: 5px 0 0;
     color: #666;
+    max-width: 500px;
 }
 
 @media (max-width: 991px) {
@@ -364,29 +382,37 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     }
 }
 
-.landing .container .image img {
-    width: 600px;
+.landing .image img {
     position: relative;
+    width: 600px;
     animation: up-and-down 5s linear infinite;
 }
 
 @media (max-width: 991px) {
-    .landing .container .image {
+    .landing .image {
         display: none;
     }
 }
 
-.landing .container i {
+.landing .go-down {
     color: var(--main-color);
     position: absolute;
-    bottom: 50px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    animation: bouncing 1.5s infinite;
-
+    transition: var(--main-transition);
 }
 
-/* End landing */
+.landing .go-down:hover {
+    color: var(--main-color-alt);
+}
+
+.landing .go-down i {
+    animation: bouncing 1.5s infinite;
+}
+
+/* End Landing *
+  
 /* Start articles section */
 .articles {
     padding-top: var(--padding-section);
@@ -520,7 +546,7 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 }
 
 .features .container .box {
-    border: 1px solid #ccc
+    border: 1px solid #ccc;
 }
 
 .features .container .box .image {
@@ -642,7 +668,7 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     position: absolute;
     top: 0;
     left: 0;
-    transition: .3s;
+    transition: 0.3s;
     z-index: -1;
 }
 
@@ -788,7 +814,6 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-
 }
 
 .team-members .container .box .box-content .social i {
@@ -914,7 +939,6 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     display: block;
     color: var(--main-color);
     margin-right: 20px;
-
 }
 
 /* End services */
@@ -1081,7 +1105,7 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     display: flex;
     gap: 10px;
     width: fit-content;
-    margin: auto
+    margin: auto;
 }
 
 .events .container .boxes .box {
@@ -1223,7 +1247,7 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 .pricing .container .plan img {
     display: block;
     width: 64px;
-    margin: 20px auto
+    margin: 20px auto;
 }
 
 .pricing .container .plan .price {
@@ -1257,7 +1281,6 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     font-weight: 900;
     margin: auto 10px;
     color: var(--main-color);
-
 }
 
 .pricing .container .plan a {
@@ -1408,9 +1431,11 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     display: flex;
     text-align: center;
 }
+
 .discount-section .content {
     padding: 20px;
 }
+
 @media (max-width: 991px) {
     .discount-section {
         flex-direction: column;
@@ -1429,7 +1454,7 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 
 .discount-section .discount p {
     margin: 30px auto;
-    width: 500px;
+    width: 400px;
     max-width: 100%;
     line-height: 1.7;
 }
@@ -1470,10 +1495,11 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     max-width: 500px;
     height: 200px;
     resize: none;
-    border-bottom: 1px solid #ccc;
     background-color: #f9f9f9;
     padding: 10px;
     border: none;
+
+    border-bottom: 1px solid #ccc;
     margin: 0 auto 20px;
 }
 

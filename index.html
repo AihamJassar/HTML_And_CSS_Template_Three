@@ -14,20 +14,22 @@
 </head>
 
 <body>
-    <header>
+
+    <div class="header" id="header">
         <div class="container">
-            <div class="logo">Al aiham</div>
-            <ul class="links">
+            <a href="#" class="logo">Elzero</a>
+            <ul class="main-nav">
                 <li><a href="#articles">Articles</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#features">Features</a></li>
                 <li>
-                    <a href="">Other Links</a>
-                    <div class="other-links">
+                    <a href="#">Other Links</a>
+                    <!-- Start Megamenu -->
+                    <div class="mega-menu">
                         <div class="image">
-                            <img src="/images/megamenu.png" alt="">
+                            <img decoding="async" src="imgs/megamenu.png" alt="" />
                         </div>
-                        <ul>
+                        <ul class="links">
                             <li>
                                 <a href="#testimonials"><i class="far fa-comments fa-fw"></i> Testimonials</a>
                             </li>
@@ -43,6 +45,8 @@
                             <li>
                                 <a href="#work-steps"><i class="far fa-clipboard fa-fw"></i> How It Works</a>
                             </li>
+                        </ul>
+                        <ul class="links">
                             <li>
                                 <a href="#events"><i class="far fa-calendar-alt fa-fw"></i> Events</a>
                             </li>
@@ -60,27 +64,27 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- End Megamenu -->
                 </li>
             </ul>
-
         </div>
-    </header>
+    </div>
     <div class="landing">
         <div class="container">
             <div class="text">
-                <h1>Welcome, To Aiham World</h1>
-                <p>
-                    Here Iam gonna share everything about my life. Books Iam reading, Games Iam Playing, Stories and
-                    Events
-                </p>
+                <h1>Welcome, To Elzero World</h1>
+                <p>Here Iam gonna share everything about my life. Books Iam reading, Games Iam Playing, Stories and
+                    Events</p>
             </div>
             <div class="image">
-                <img decoding="async" src="images/landing-image.png" alt="">
+                <img decoding="async" src="imgs/landing-image.png" alt="" />
             </div>
-            <i class="fas fa-angle-double-down fa-2x"></i>
         </div>
+        <a href="#articles" class="go-down">
+            <i class="fas fa-angle-double-down fa-2x"></i>
+        </a>
     </div>
-    <div class="articles">
+    <div class="articles" id="articles">
         <div class="container">
             <h2 class="main-header">articles</h2>
             <section>
@@ -191,8 +195,8 @@
             </section>
         </div>
     </div>
-				<div class="spikes"></div>
-    <div class="gallery">
+    <div class="spikes"></div>
+    <div class="gallery" id="gallery">
         <h2 class="main-header">gallery</h2>
         <div class="container">
             <div class="content">
@@ -219,7 +223,7 @@
             </div>
         </div>
     </div>
-    <div class="features">
+    <div class="features" id="features">
         <h2 class="main-header">features</h2>
         <div class="container">
             <div class="box">
@@ -260,7 +264,7 @@
             </div>
         </div>
     </div>
-    <div class="testimonials">
+    <div class="testimonials" id="testimonials">
         <h2 class="main-header">testimonials</h2>
         <div class="container">
             <div class="box">
@@ -379,7 +383,7 @@
             </div>
         </div>
     </div>
-    <div class="team-members">
+    <div class="team-members" id="team">
         <h2 class="main-header">Team Members</h2>
         <div class="container">
             <div class="box">
@@ -520,7 +524,8 @@
             </div>
         </div>
     </div>
-    <div class="services">
+    <div class="spikes"></div>
+    <div class="services" id="services">
         <h2 class="main-header">services</h2>
         <div class="container">
             <div class="box">
@@ -573,7 +578,7 @@
             </div>
         </div>
     </div>
-    <div class="our-skills">
+    <div class="our-skills" id="our-skills">
         <h2 class="main-header">our skills</h2>
         <div class="container">
             <div class="image">
@@ -647,7 +652,7 @@
             </div>
         </div>
     </div>
-    <div class="events">
+    <div class="events" id="events">
         <h2 class="main-header">latest events</h2>
         <div class="container">
             <img src="images/events.png" alt="">
@@ -683,7 +688,7 @@
             </div>
         </div>
     </div>
-    <div class="pricing">
+    <div class="pricing" id="pricing">
         <h2 class="main-header">pricing plans</h2>
         <div class="container">
             <div class="plan">
@@ -701,7 +706,7 @@
                 <a href="#">Choose Plan</a>
             </div>
             <div class="plan">
-            				<h3 class="label">Most Popular</h3>
+                <h3 class="label">Most Popular</h3>
                 <h3>Advanced</h3>
                 <img src="images/hosting-advanced.png" alt="">
                 <div class="price">$25</div>
@@ -733,7 +738,7 @@
 
         </div>
     </div>
-    <div class="top-videos">
+    <div class="top-videos" id="top-videos">
         <h2 class="main-header">top videoes</h2>
         <div class="container">
             <div class="content">
@@ -784,7 +789,7 @@
             </div>
         </div>
     </div>
-    <div class="stats-section">
+    <div class="stats-section" id="states">
         <div class="container">
             <h1>Our Awesome Stats</h1>
             <div class="content">
@@ -811,30 +816,32 @@
             </div>
         </div>
     </div>
-    <div class="discount-section">
+    <div class="discount-section" id="discount">
         <div class="discount">
-        				<div class="content">
-            <h2>We Have A Discount</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi asperiores consectetur, recusandae
-                ratione provident necessitatibus, cumque delectus commodi fuga praesentium beatae. Totam vel similique
-                laborum dicta aperiam odit doloribus corporis.
-            </p>
-            <img src="images/discount.png" alt="">
-        				</div>
+            <div class="content">
+                <h2>We Have A Discount</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi asperiores consectetur,
+                    recusandae
+                    ratione provident necessitatibus, cumque delectus commodi fuga praesentium beatae. Totam vel
+                    similique
+                    laborum dicta aperiam odit doloribus corporis.
+                </p>
+                <img src="images/discount.png" alt="">
+            </div>
         </div>
-    				<div class="request-discount">
-        <div class="content">
-            <h2>Request A Discount</h2>
-            <form>
-                <input type="text" name="name" placeholder="Your Name">
-                <input type="email" name="name" placeholder="Your Email">
-                <input type="tel" name="phone" placeholder="Your Phone">
-                <textarea placeholder="Tells Us About Your Needs"></textarea>
-                <input type="submit" value="Send">
-            </form>
+        <div class="request-discount">
+            <div class="content">
+                <h2>Request A Discount</h2>
+                <form>
+                    <input type="text" name="name" placeholder="Your Name">
+                    <input type="email" name="name" placeholder="Your Email">
+                    <input type="tel" name="phone" placeholder="Your Phone">
+                    <textarea placeholder="Tells Us About Your Needs"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
         </div>
-    				</div>
     </div>
     <div class="footer">
         <div class="container">
