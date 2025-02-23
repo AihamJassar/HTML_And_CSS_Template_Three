@@ -118,6 +118,20 @@ h2.main-header:hover::after {
 }
 
 /* End main header */
+/* spikes */
+.spikes {
+    position: relative;
+}
+.spikes {
+    content: "";
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    reight: 0;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+    background-size: 30px 30px;
+    z-index: 1;
+}
 /* Start header */
 header {
     background-color: white;
@@ -1186,25 +1200,24 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
     position: relative;
 }
 
-.pricing .container .plan:nth-child(2) h3::before {
-    content: "Most Popular";
+.pricing .container .plan:nth-child(2) h3.label {
     width: fit-content;
     background-color: var(--main-color);
     color: white;
-    padding: 10px 30px;
+    padding: 10px 10px 30px 10px;
     position: absolute;
-    right: -60px;
-    top: 49px;
-    transform: rotate(90deg);
+    right: 10px;
+    top: 0;
+    writing-mode: vertical-lr;
 }
 
-.pricing .container .plan:nth-child(2) h3::after {
+.pricing .container .plan:nth-child(2) h3.label::before {
     content: "";
     border: 20px solid;
     border-color: transparent transparent white transparent;
     position: absolute;
-    top: 120px;
-    right: 18px;
+    bottom: 0;
+    right: 0;
 }
 
 .pricing .container .plan img {
@@ -1392,12 +1405,12 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 /* End stats */
 /* Start discount */
 .discount-section {
-    padding-top: var(--padding-section);
-    padding-bottom: var(--padding-section);
     display: flex;
     text-align: center;
 }
-
+.discount-section .content {
+    padding: 20px;
+}
 @media (max-width: 991px) {
     .discount-section {
         flex-direction: column;
@@ -1407,7 +1420,6 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 .discount-section .discount {
     flex: 1;
     background-color: var(--main-color);
-    padding: 50px;
     color: white;
 }
 
@@ -1417,13 +1429,9 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 
 .discount-section .discount p {
     margin: 30px auto;
+    width: 500px;
+    max-width: 100%;
     line-height: 1.7;
-}
-
-@media (max-width: 991px) {
-    .discount-section .discount {
-        padding: 20px 30px;
-    }
 }
 
 .discount-section .discount img {
@@ -1433,13 +1441,6 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 .discount-section .request-discount {
     min-width: 50%;
     flex: 1;
-    padding: 50px 150px;
-}
-
-@media (max-width: 991px) {
-    .discount-section .request-discount {
-        padding: 20px 30px;
-    }
 }
 
 .discount-section .request-discount h2 {
@@ -1448,8 +1449,8 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 
 .discount-section .request-discount input {
     display: block;
-    width: 400px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
     padding: 10px;
     margin: 0 auto 20px;
     background-color: #f9f9f9;
@@ -1465,8 +1466,8 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 
 .discount-section .request-discount textarea {
     display: block;
-    width: 400px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
     height: 200px;
     resize: none;
     border-bottom: 1px solid #ccc;
@@ -1577,6 +1578,7 @@ header .container>ul li:last-of-type .other-links ul li:not(:last-of-type, :nth-
 }
 
 .footer>p {
+    border-top: 1px solid #777;
     text-align: center;
     padding: 25px 0;
     color: white;
